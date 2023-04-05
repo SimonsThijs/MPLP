@@ -8,8 +8,8 @@ import torchvision
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
 
-from network import *
-from layers import *
+from mplp.network import *
+from mplp.layers import *
 
 
 # Base class

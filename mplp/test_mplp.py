@@ -1,8 +1,8 @@
 import unittest
 
-from layers import *
-from network import *
-from tasks import FashionMNISTTask
+from mplp.layers import *
+from mplp.network import *
+from mplp.tasks import FashionMNISTTask
 
 import torch
 import torch.nn.functional as F

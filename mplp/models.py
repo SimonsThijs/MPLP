@@ -189,14 +189,7 @@ class SGDMessageCrossentropyLoss(NonParameterizedModel):
         y = input[:,2]
 
         result = probs-y
-        return torch.unsqueeze(result, dim=-1)   
-
-
-class SGDLearningRate(NonParameterizedModel):
-    def __init__(self, lr, device='cpu'):
-        super(SGDLearningRate, self).__init__(device)
-        self.lr = lr
-
+        return torch.unsqueeze(result, dim=-1)    
 
 
     

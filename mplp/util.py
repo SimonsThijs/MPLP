@@ -3,7 +3,7 @@ import torch.nn as nn
 import functorch
 import numpy as np
 
-from .models import NonParameterizedModel
+from mplp.models import NonParameterizedModel
 
 def object_is_activation(obj):
     list_of_activation_classes = [nn.ReLU, nn.Sigmoid, nn.Tanh, nn.Softmax]
@@ -31,7 +31,7 @@ def repeat_from_dict_and_combine_state_for_ensemble(dict, N):
 
     return funcs, states
   
-def list_of_dicts_combine_state_for_ensemble(models, N):
+def list_of_dicts_combine_state_for_ensemble(models):
     funcs = {}
     states = {}
     for key, value in models[0].items():

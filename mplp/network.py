@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from layers import *
+from mplp.layers import *
 
 class MessagePassingNetwork():
     """
@@ -226,8 +226,9 @@ def unroll_fn(inner_states, outer_state, K, inner_model, outer_model, task, retu
     #returning the data
     to_return = [loss_accum+be_accum, inner_states] # we always return the loss and the inner states
 
+
     if return_loss_list:
-        to_return.append(log_list)
+        to_return.append(loss_list)
 
     if return_final_loss:
         to_return.append(loss)
@@ -236,6 +237,7 @@ def unroll_fn(inner_states, outer_state, K, inner_model, outer_model, task, retu
         to_return.append(loss_accum)
         to_return.append(be_accum)
 
+    print(to_return)
     return tuple(to_return)
 
 
