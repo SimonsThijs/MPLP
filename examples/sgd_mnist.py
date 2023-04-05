@@ -4,7 +4,7 @@ The trick is in the models that we used from mplp.models
 The thesis explains how we have found these models see Section Expressiveness to imitate SGD
 """
 
-
+import os
 from mplp.network import MessagePassingNetwork, unroll_fn
 from mplp.models import SGDUpdateFunction, SGDMessageCrossentropyLoss, SGDMessageReLUActivation, SGDMessageLinear, LearningRate
 from mplp.layers import MessagePassingLinear, MessagePassingReLU, MessagePassingCrossEntropy
@@ -48,9 +48,9 @@ import matplotlib.pyplot as plt
 plt.plot(loss_list)
 plt.xlabel('t')
 plt.ylabel('loss')
-plt.title('MNIST SGD')
-plt.savefig('examples/sgd_sinewave.png')
-
+plt.title('MNIST SGD using MPLP framework')
+folder_of_this_file = os.path.dirname(os.path.abspath(__file__))
+plt.savefig(folder_of_this_file + '/sgd_mnist.png')
 
 
 

@@ -41,20 +41,6 @@ class MessageLinear(nn.Module):
         return self.func(x) 
 
 
-class MessageSoftmax(nn.Module):
-    def __init__(self, message_size, hidden_size, device='cpu'):
-        super(MessageSoftmax, self).__init__()
-        self.func = nn.Sequential(
-            nn.Linear(message_size+1, hidden_size),
-            nn.ReLU(),
-            nn.Linear(hidden_size, message_size),
-            )
-        
-        self.to(device)
-
-    def forward(self, x):
-        return self.func(x)
-
 class MessageRelu(nn.Module):
     def __init__(self, message_size, hidden_size, device='cpu'):
         super(MessageRelu, self).__init__()

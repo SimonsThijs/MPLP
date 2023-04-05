@@ -142,7 +142,7 @@ class FuncTask(Task):
         x = torch.rand((self.batch_size*n, self.input_size)) * (self.stop-self.start) + self.start
         y = self.func(x, **self.params)
         pred = const_func(x)
-        loss = MessagePassingMSE.loss(pred, y)
+        loss = MessagePassingMSE.forward(pred, y)
         self.max_loss = loss.item()
     
     def normalize_loss(self, losses):

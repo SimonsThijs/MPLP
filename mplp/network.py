@@ -237,7 +237,6 @@ def unroll_fn(inner_states, outer_state, K, inner_model, outer_model, task, retu
         to_return.append(loss_accum)
         to_return.append(be_accum)
 
-    print(to_return)
     return tuple(to_return)
 
 
