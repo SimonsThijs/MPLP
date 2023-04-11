@@ -30,6 +30,11 @@ Train an mplp on the mnist problem using batch entropy regularization as describ
 python3 examples/mplp_mnist.py --wandb False
 ```
 
+Mimic SGD using the MPLP framework:
+```
+python3 examples/sgd_mnist.py
+```
+
 
 ### Differences with the original
 This implementation sometimes deviates from the original, the most important difference is that we have decided to not use RNNs in the linear nodes. This is done to make the understanding of the MPLP more easy. Start simple and gradually extend is the philosphy used.
