@@ -1,8 +1,8 @@
 """
 This example shows how to train the MPLP on a set of sinewave functions
 This is the most basic example of how to train the MPLP
-Most of this code is initializing optimizee optimizer tasks etc.
-The important part is the function at the end of the file called 'meta_learn'
+Most of this code is initializing optimizee, optimizer, tasks etc.
+The important part is the function at the end of this file called 'meta_learn'
 """
 import math
 import argparse
@@ -119,18 +119,18 @@ folder_of_this_file = os.path.dirname(os.path.abspath(__file__))
 
 args = parser.parse_args()
 args.message_passing = args.message_passing == 'True'
+args.wandb = args.wandb == 'True'
 
-if args.wandb == 'True':
+if args.wandb:
     import wandb
     wandb.init(
-        # set the wandb project where this run will be logged
         project="mplp_sinewave",
-        config=dict(vars(args))
+        config=dict(vars(args)) #this is nice because it saves all the arguments in wandb
     )
 
 log_buffer = {}
 def log(data, commit=True):
-    if args.wandb == 'True':
+    if args.wandb:
         wandb.log(data, commit=commit)
     else:
         log_buffer.update(data)
@@ -198,7 +198,7 @@ def get_model():
     return model
 
 outer_model, outer_states = list_of_dicts_combine_state_for_ensemble([get_model(),])
-outer_states = apply_to_nested(lambda x: x[0], outer_states)
+outer_states = apply_to_nested(lambda x: x[0], outer_states) # ugly but list_of_dicts_combine_state_for_ensemble only supports returning a dict of lists 
 
 
 # tasks
