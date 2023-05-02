@@ -379,6 +379,13 @@ class MNISTTask(Task):
 
         self.X_test = self.X_test[self.permutation_test]
         self.y_test = self.y_test[self.permutation_test]
+
+        # to device
+        self.X_train = self.X_train.to(device)
+        self.y_train = self.y_train.to(device)
+
+        self.X_test = self.X_test.to(device)
+        self.y_test = self.y_test.to(device)
     
     def set_random_norm(self):
         # mean random float between -0.5 and 0.5
@@ -395,6 +402,7 @@ class MNISTTask(Task):
             self.epoch += 1
 
         batch = (self.X_train[self.index:self.index+self.batch_size*n]-self.mean)/self.std, self.y_train[self.index:self.index+self.batch_size*n], self.epoch
+        
 
         if update_index:
             self.index += self.batch_size*n
@@ -480,6 +488,13 @@ class FashionMNISTTask(Task):
 
         self.X_test = self.X_test[self.permutation_test]
         self.y_test = self.y_test[self.permutation_test]
+
+        # to device
+        self.X_train = self.X_train.to(device)
+        self.y_train = self.y_train.to(device)
+
+        self.X_test = self.X_test.to(device)
+        self.y_test = self.y_test.to(device)
 
     def _get_next(self, update_index=True, n=None):
         if n is None:

@@ -11,7 +11,7 @@ Original paper: https://arxiv.org/abs/2007.00970
 
 ```
 git clone https://github.com/SimonsThijs/MPLP.git
-cd mplp
+cd MPLP
 python3 -m pip install -r requirements.txt
 python3 -m pip install -e .
 ```
