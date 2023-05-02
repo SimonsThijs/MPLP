@@ -85,7 +85,9 @@ plt.ylabel("loss")
 # log space for lr
 plt.xscale('log')
 
-plt.savefig('examples/sgd_sinewave_lr_randamp.png')
+folder_of_this_file = os.path.dirname(os.path.abspath(__file__))
+plt.savefig(folder_of_this_file + '/sgd_sinewave_lr_randamp.png')
+
 
 
 
