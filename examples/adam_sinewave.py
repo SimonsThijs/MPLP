@@ -1,7 +1,6 @@
 """
-This examples shows how to use the MPLP framework as a simple SGD optimizer.
-The trick is in the models that we used from mplp.models
-The thesis explains how we have found these models see Section Expressiveness to imitate SGD
+This examples is just to compare the performance of mplp with Adam.
+We just train a netowrk using the adam optimizer.
 """
 
 import torch
