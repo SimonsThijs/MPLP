@@ -3,7 +3,7 @@ Reimplementation of the Message Passing Learning Protocol framework for my maste
 
 Main contribution of my thesis is the addition of batch entropy regularization which can make the training of mplp like methods significantly more predictable.
 
-Master thesis: \
+Master thesis: https://liacs.leidenuniv.nl/~s1830120/thesis.pdf (Not final)\
 Original paper: https://arxiv.org/abs/2007.00970 
 
 
