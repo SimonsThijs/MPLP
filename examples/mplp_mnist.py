@@ -1,5 +1,5 @@
 """
-This example shows how to train the MPLP on a set of sinewave functions
+This example shows how to train the MPLP on the mnist dataset
 This is the most basic example of how to train the MPLP
 Most of this code is initializing optimizee, optimizer, tasks etc.
 The important part is the function at the end of this file called 'meta_learn'
